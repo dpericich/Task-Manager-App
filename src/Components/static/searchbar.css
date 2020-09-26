@@ -1,0 +1,39 @@
+.searchbar {
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    width: 30%;
+    overflow: hidden;
+}
+
+input {
+    border: none;
+    height:100%;
+    width: 90%
+}
+
+input:focus {
+    outline: none;
+    color:#ff9149;
+}
+
+#task::after {
+    content: "";
+    display: block;
+    background-color: coral;
+    width: 80%;
+    height: 2px;
+    transform: translateX(-100%);
+    transition: 0.3 ease;
+}
+
+/* label input:focus, label input:valid {
+    transform: translateY(-150%);
+} */
+
+label input:focus + #task::after, 
+label input:valid  + #task::after{
+    transform: translateX(0%);
+}
